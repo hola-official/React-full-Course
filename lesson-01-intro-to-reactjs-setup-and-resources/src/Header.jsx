@@ -3,8 +3,8 @@ const Header = () => {
   const headerStyle = {
     backgroundColor: "#00abf0",
     color: "#f8f8f8",
-    borderTopRightRadius: "10px",
-    borderBottomLeftRadius: "10px",
+    borderTopRightRadius: "20px",
+    borderBottomLeftRadius: "20px",
     padding: "10px",
     width: "100%"
   }

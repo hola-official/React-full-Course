@@ -14,16 +14,27 @@ const Content = () => {
         console.log(`${names} was clicked`);
     }
 
-    const handleClickTwo = () => {
-        
+    const handleClickTwo = (e) => {
+        console.log(e.target.innerText)
     }
+
+    const styling = {
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr",
+        gap: "10px"
+    }
+
     return (
         <main>
             <p>
                 Hello {handleNameChange()}
             </p>
-            <button onClick={handleClick}><span>Click it</span></button>
-            <button onClick={() => handleClickOne('Muhammad')}><span>Click name</span></button>
+            <div style={styling}>
+                <button onClick={handleClick}><span>Click it</span></button>
+                <button onClick={() => handleClickOne('Muhammad')}><span>Click name</span></button>
+                <button onClick={(e) => handleClickTwo(e)}><span>Click Now</span></button>
+            </div>
+
         </main>
     )
 }
