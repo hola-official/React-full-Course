@@ -5,9 +5,25 @@ const Content = () => {
         const int = Math.floor(Math.random() * 3)
         return names[int]
     }
+
+    const handleClick = () => {
+        console.log("you click it");
+    }
+
+    const handleClickOne = (names) => {
+        console.log(`${names} was clicked`);
+    }
+
+    const handleClickTwo = () => {
+        
+    }
     return (
         <main>
-            Hello {handleNameChange()}
+            <p>
+                Hello {handleNameChange()}
+            </p>
+            <button onClick={handleClick}><span>Click it</span></button>
+            <button onClick={() => handleClickOne('Muhammad')}><span>Click name</span></button>
         </main>
     )
 }

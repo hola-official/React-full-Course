@@ -3,12 +3,17 @@ const Header = () => {
   const headerStyle = {
     backgroundColor: "#00abf0",
     color: "#f8f8f8",
-    borderRadius: "5px",
-    padding: "10px 5px"
+    borderTopRightRadius: "10px",
+    borderBottomLeftRadius: "10px",
+    padding: "10px",
+    width: "100%"
   }
   return (
     <header style={headerStyle}>
-      <h1>WELCOME TO <span>REACT IN DETAILS</span></h1>
+      <h1>WELCOME TO <span>REACT</span> IN DETAILS</h1>
+      <h2 style={{
+        color: "black"
+      }}>WELCOME TO <span>DLT-AFRICA</span> BOOT CAMP</h2>
     </header>
   )
 }
