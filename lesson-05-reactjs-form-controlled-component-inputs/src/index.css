@@ -10,11 +10,8 @@ html {
 }
 
 body {
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-  /* padding: 10px 20px; */
   min-height: 100vh;
+  scroll-behavior: smooth;
 }
 
 .App {
@@ -22,7 +19,9 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: calc(100vh - 2px);
+  height: 100vh;
+  width: 100%;
+  max-width: 500px;
   border: 1px solid black;
   margin:  auto;
 }
@@ -41,7 +40,7 @@ span {
   color: aqua;
 }
 
-button {
+/* button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,6 +51,73 @@ button {
   background-color: rgb(0, 171, 240);
   padding: 10px 12px;
   margin-top: 10px;
+} */
+
+.addForm {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem 0 0;
+  padding: 0 0.5rem 0.25rem;
+  border-bottom: 1px solid #eee;
+}
+
+.addForm label {
+  position: absolute;
+  left: -99999px;
+}
+
+.addForm input[type='text'] {
+  flex-grow: 1;
+  max-width: calc(100% - 50px);
+  min-height: 48px;
+  font-size: 1rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  margin-right: 0.25rem;
+  outline: none;
+}
+
+button {
+  height: 48px;
+  min-width: 48px;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: aliceblue;
+  color: mediumblue;
+  cursor: pointer;
+}
+
+button:focus, 
+button:hover {
+  color: white;
+  background-color: limegreen;
+  outline: none;
+}
+
+.searchForm {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0.25rem 0 0;
+  padding: 0 0.5rem 0.25rem;
+  border-bottom: 1px solid #eee;
+}
+
+.searchForm label {
+  position: absolute;
+  left: -99999px;
+}
+
+.searchForm input[type='text'] {
+  flex-grow: 1;
+  max-width: 100%;
+  min-height: 48px;
+  font-size: 1rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  outline: none;
 }
 
 main {
@@ -59,9 +125,9 @@ main {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  overflow-y: hidden;
+  overflow-y: scroll;
   
 }
 

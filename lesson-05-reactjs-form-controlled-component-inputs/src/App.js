@@ -3,39 +3,45 @@ import './index.css'
 import Content from './Content'
 import Footer from './Footer'
 import Header from './Header'
+import AddItem from "./AddItem";
+import SearchItem from "./SearchItem";
 
 function App() {
-  const [items, setItems] = useState([
-    {
-        id: 1,
-        checked: false,
-        item: "ReactJs"
-    },
-    {
-        id: 2,
-        checked: false,
-        item: "JavaScript"
-    },
-    {
-        id: 3,
-        checked: false,
-        item: "Nodejs"
-    }
-])
+  const [newItem, setNewItem] = useState('');
+  const [items, setItems] = useState(JSON.parse(localStorage.getItem('Shoppinglist')) || [])
+  const [search, setSearch] = useState('')
 
-const handleCheck = (id) => {
+  const setAndSaveItems = (newItem) => {
+    setItems(newItem)
+    localStorage.setItem('Shoppinglist', JSON.stringify(newItem))
+  }
+
+  const addItem = (item) => {
+    const id = items.length ? items[items.length - 1].id + 1 : 1;
+    const myNewItem = { id, checked: false, item };
+    const listItems = [...items, myNewItem]
+
+    setAndSaveItems(listItems)
+  }
+
+  const handleCheck = (id) => {
     const listItems = items.map((item) => item.id === id ? { ...item, checked: !item.checked } : item);
-    setItems(listItems)
 
-    localStorage.setItem('ShoppingList', JSON.stringify(listItems))
-}
+    setAndSaveItems(listItems)
+  }
 
-const handleDelete = (id) => {
+  const handleDelete = (id) => {
     const listItems = items.filter((item) => item.id !== id)
-    setItems(listItems)
 
-    localStorage.setItem('ShoppingList', JSON.stringify(listItems))
-}
+    setAndSaveItems(listItems)
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!newItem) return;
+    addItem(newItem);
+    setNewItem('')
+  }
   const cohorts = <h1>WELCOME TO <span>DLT-AFRICA</span> BOOT CAMP</h1>
 
   return (
@@ -43,7 +49,9 @@ const handleDelete = (id) => {
 
       {/* Hello {handleNameChange()} */}
       < Header title={cohorts} />  {/* < Header title="Cohort" />  another way to use it*/}
-      < Content items={items} handleCheck={handleCheck} handleDelete={handleDelete} />
+      < AddItem newItem={newItem} setNewItem={setNewItem} handleSubmit={handleSubmit} />
+      < SearchItem search={search} setSearch={setSearch} />
+      < Content items={items.filter(item => ((item.item).toLowerCase()).includes(search.toLowerCase()))} handleCheck={handleCheck} handleDelete={handleDelete} />
       < Footer length={items.length} />
 
     </div>

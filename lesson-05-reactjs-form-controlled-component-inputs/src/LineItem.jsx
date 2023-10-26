@@ -3,7 +3,7 @@ import { BsTrash3 } from 'react-icons/bs'
 
 const LineItem = ({item, handleCheck, handleDelete}) => {
     return (
-        <li className="item" key={item.id}>
+        <li className="item">
             <input onChange={() => handleCheck(item.id)} type="checkbox" checked={item.checked} />
             <label style={(item.checked) ? { textDecoration: "line-through" } : null} onDoubleClick={() => handleCheck(item.id)}>{item.item}</label>
 
