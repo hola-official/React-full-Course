@@ -66,23 +66,23 @@ const App = () => {
     setSearchResult(filterResult.reverse());
   }, [posts, search]);
 
-  useEffect(() => {
-    const fetchPost = async () => {
-      try {
-        const response = await api.get("/posts");
-        setPosts(response.data);
-      } catch (err) {
-        if (err.message) {
-          console.log(err.response.data);
-          console.log(err.response.status);
-          console.log(err.response.headers);
-        } else {
-          console.log(`Error: ${err.message}`);
-        }
-      }
-    };
-    fetchPost();
-  }, []);
+  // useEffect(() => {
+  //   const fetchPost = async () => {
+  //     try {
+  //       const response = await api.get("/posts");
+  //       setPosts(response.data);
+  //     } catch (err) {
+  //       if (err.message) {
+  //         console.log(err.response.data);
+  //         console.log(err.response.status);
+  //         console.log(err.response.headers);
+  //       } else {
+  //         console.log(`Error: ${err.message}`);
+  //       }
+  //     }
+  //   };
+  //   fetchPost();
+  // }, []);
 
   const handleEdit = async (id) => {
     const date = format(new Date(), "MMMM dd, yyyy pp");
