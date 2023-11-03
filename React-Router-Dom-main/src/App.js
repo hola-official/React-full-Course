@@ -34,7 +34,10 @@ const App = () => {
   const [editTitle, setEditTitle] = useState("");
   const [editBody, setEditBody] = useState("");
   const { width } = UseWindowSize();
-  const {data, fetchError, isLoading} = useState('http://localhost:3500/posts')
+  const {data, fetchError, isLoading} = UseAxiosFetch('http://localhost:3500/posts')
+  useEffect(() => {
+    setPosts(data)
+  }, [data])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -103,7 +106,11 @@ const App = () => {
         path=""
         element={<HomeLayout search={search} width={width} setSearch={setSearch} />}
       >
-        <Route index element={<Home posts={searchResult} />} />
+        <Route index element={<Home 
+        posts={searchResult}
+        fetchError={fetchError}
+        isLoading={isLoading}
+         />} />
         <Route path="/post">
           <Route
             index
