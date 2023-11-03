@@ -9,6 +9,7 @@ import About from "./About";
 import HomeLayout from "./HomeLayout";
 import api from "./api/posts";
 import EditPost from "./EditPost";
+import UseWindowSize from "./hooks/UseWindowSize";
 
 const App = () => {
   const navigate = useNavigate();
@@ -31,6 +32,8 @@ const App = () => {
   const [postBody, setPostBody] = useState("");
   const [editTitle, setEditTitle] = useState("");
   const [editBody, setEditBody] = useState("");
+
+  const { width } = UseWindowSize();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -97,7 +100,7 @@ const App = () => {
     <Routes>
       <Route
         path=""
-        element={<HomeLayout search={search} setSearch={setSearch} />}
+        element={<HomeLayout search={search} width={width} setSearch={setSearch} />}
       >
         <Route index element={<Home posts={searchResult} />} />
         <Route path="/post">

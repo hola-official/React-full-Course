@@ -252,8 +252,8 @@ svg {
   outline: none;
 }
 
-.deleteButton {
-  background-color: red;
+.PostPage svg:hover:active:last-child {
+  color: red;
 }
 
 .statusMsg {
