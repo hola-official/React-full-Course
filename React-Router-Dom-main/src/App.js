@@ -10,6 +10,7 @@ import HomeLayout from "./HomeLayout";
 import api from "./api/posts";
 import EditPost from "./EditPost";
 import UseWindowSize from "./hooks/UseWindowSize";
+import UseAxiosFetch from "./hooks/UseAxiosFetch";
 
 const App = () => {
   const navigate = useNavigate();
@@ -32,8 +33,8 @@ const App = () => {
   const [postBody, setPostBody] = useState("");
   const [editTitle, setEditTitle] = useState("");
   const [editBody, setEditBody] = useState("");
-
   const { width } = UseWindowSize();
+  const {data, fetchError, isLoading} = useState('http://localhost:3500/posts')
 
   const handleSubmit = async (e) => {
     e.preventDefault();
