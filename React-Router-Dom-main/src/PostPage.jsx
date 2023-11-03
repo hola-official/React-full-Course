@@ -1,7 +1,7 @@
 // import React from 'react'
-// import { Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { useParams } from "react-router-dom"
-
+import { HiOutlinePencilSquare } from "react-icons/hi2"
 const PostPage = ({ posts, handleDelete }) => {
   const { id } = useParams()
   const post = posts.find(post => post.id.toString() === id);
@@ -12,7 +12,10 @@ const PostPage = ({ posts, handleDelete }) => {
         <h2 className="postTitle">{post.title}</h2>
         <p className="postDate">{post.date}</p>
         <p className="postBody">{post.body}</p>
-        <button onClick={() => handleDelete(post.id)} >Delete</button>
+        <Link to={`/edit/${post.id}`}>
+            <HiOutlinePencilSquare role="button" tabIndex="0" className="editButton"/>
+        </Link>
+        <button className="deleteButton" onClick={() => handleDelete(post.id)} >Delete</button>
         </>}
       </article>
     </main>
