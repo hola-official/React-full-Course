@@ -1,10 +1,27 @@
 // import React from 'react'
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useParams } from "react-router-dom"
 import { HiOutlinePencilSquare } from "react-icons/hi2"
 import { BsTrash3 } from "react-icons/bs"
+import { useContext } from "react"
+import DataContext from "./context/DataContext"
+import api from './api/posts'
 
-const PostPage = ({ posts, handleDelete }) => {
+const PostPage = () => {
+
+    const { posts, setPosts } = useContext(DataContext)
+    const navigate = useNavigate()
+    const handleDelete = async (id) => {
+        try {
+            await api.delete(`/posts/${id}`);
+            const postLists = posts.filter((post) => post.id !== id);
+            setPosts(postLists);
+            navigate("/");
+        } catch (err) {
+            console.log(`Error: ${err.message}`);
+        }
+    };
+    
     const { id } = useParams()
     const post = posts.find(post => post.id.toString() === id);
     return (

@@ -152,6 +152,7 @@ body {
 }
 
 .Home .post a {
+  font-family: "Chakra Petch", sans-serif;
   text-decoration: none;
 }
 
@@ -177,10 +178,11 @@ body {
   margin: 1rem 0;
 }
 
-.PostPage h2, .NewPost h2, label {
+.PostPage h2,
+.NewPost h2,
+label {
   font-family: "Chakra Petch", sans-serif;
   /* font-family: "Times New Roman", Times, serif; */
-
 }
 
 .newPostForm {
@@ -259,6 +261,40 @@ svg {
 .statusMsg {
   margin-top: 2rem;
 }
+
+.not-found-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #333;
+  color: #fff;
+}
+
+.error-message {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 120px;
+  margin: 0;
+}
+
+p {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+a {
+  color: #1E90FF;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .About h2,
 h3 {
   font-family: "Chakra Petch", sans-serif;
@@ -304,7 +340,7 @@ h3 {
   .newPostForm textarea {
     height: 300px;
     /* form-sizing: content; */ /* new css attribute*/
-  } 
+  }
 }
 
 @media only screen and (min-width: 992px) {
