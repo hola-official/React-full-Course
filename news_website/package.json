@@ -2,7 +2,7 @@
   "name": "news_website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/isdevmuhammed.github.io/dlt-blog-site",
+  "homepage": "https://isdevmuhammed.github.io/DLT-Blog-site",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
