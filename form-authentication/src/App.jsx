@@ -16,11 +16,13 @@ const App = () => {
 
   return (
     <main className='App'>
-      {user ? (
+
+      <Login/>
+      {/* {user ? (
         <Home username={user} handleLogout={handleLogout} />
       ) : (
         <Login handleLogin={handleLogin} />
-      )}
+      )} */}
     </main>
   );
 };
