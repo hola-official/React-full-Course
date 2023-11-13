@@ -15,6 +15,10 @@ const LoginForm = ({ handleLogin }) => {
     useRef.current.focus()
   }, [])
 
+  useEffect(() => {
+    setErrMsg('')
+  }, [username, password])
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // Basic validation, you'd typically want to do more here
@@ -24,27 +28,30 @@ const LoginForm = ({ handleLogin }) => {
   };
 
   return (
+    <>
     <section>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor='username'>
-            Username:
-          </label>
-          <input
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          <label htmlFor='password'>
-            Password:
-          </label>
-          <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          <button type="submit">Login</button>
-        </form>
+      <h1>Login</h1>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor='username'>
+          Username:
+        </label>
+        <input
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <label htmlFor='password'>
+          Password:
+        </label>
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button type="submit">Login</button>
+      </form>
     </section>
+    </>
   );
 };
 
