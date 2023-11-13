@@ -1,7 +1,7 @@
 // src/components/Dashboard.jsx
 import React from 'react';
 
-const Dashboard = ({ username, handleLogout }) => {
+const Home = ({ username, handleLogout }) => {
   return (
     <section>
       <h1>Welcome, {username}!</h1>
@@ -10,4 +10,4 @@ const Dashboard = ({ username, handleLogout }) => {
   );
 };
 
-export default Dashboard;
+export default Home;

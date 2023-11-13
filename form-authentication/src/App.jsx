@@ -17,7 +17,7 @@ const App = () => {
   return (
     <main className='App'>
       {user ? (
-        <Home username={user} handleLogout={handleLogout} path="/home" />
+        <Home username={user} handleLogout={handleLogout} />
       ) : (
         <Login handleLogin={handleLogin} />
       )}
