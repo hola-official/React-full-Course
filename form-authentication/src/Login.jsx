@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 
 
-function Login() {
+function Login({handleLogin}) {
     const userRef = useRef()
     const errRef = useRef()
 
@@ -21,13 +21,13 @@ function Login() {
 
 
     
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   // Basic validation, you'd typically want to do more here
-  //   if (username && password) {
-  //     handleLogin(username);
-  //   }
-  // };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Basic validation, you'd typically want to do more here
+    if (username && password) {
+      handleLogin(username);
+    }
+  };
 
   return (
     <>
@@ -36,7 +36,7 @@ function Login() {
                 {errMsg}
             </p>
             <h1>Sign In</h1>
-            <form >
+            <form onSubmit={handleSubmit}>
                 <label htmlFor='username'>
                     Username:
                     <input
@@ -59,10 +59,18 @@ function Login() {
                         required
                     />
                 </label>
-                <button >
+                <button 
+                
+                >
                     Sign In
                 </button>
             </form>
+            <p>
+              Need an Account? <br />
+              <span className='line'>
+                <a href="#">Sign Up</a>
+              </span>
+            </p>
         </section>
     </>
   )
