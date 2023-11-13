@@ -15,13 +15,13 @@ const App = () => {
   };
 
   return (
-    <section className='App'>
+    <main className='App'>
       {user ? (
-        <Home username={user} handleLogout={handleLogout} />
+        <Home username={user} handleLogout={handleLogout} path="/home" />
       ) : (
         <Login handleLogin={handleLogin} />
       )}
-    </section>
+    </main>
   );
 };
 

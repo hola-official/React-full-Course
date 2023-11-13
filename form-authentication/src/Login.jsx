@@ -1,9 +1,19 @@
 // src/components/LoginForm.jsx
 import { useState, useRef, useEffect } from 'react';
 
+
 const LoginForm = ({ handleLogin }) => {
+  const userRef = useRef()
+  const errRef = userRef()
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [errMsg, setErrMsg] = useState("")
+  const [success, setSuccess] = useState(false)
+
+  useEffect(() => {
+    useRef.current.focus()
+  }, [])
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,8 +24,7 @@ const LoginForm = ({ handleLogin }) => {
   };
 
   return (
-    <>
-      <div>
+    <section>
         <form onSubmit={handleSubmit}>
           <label htmlFor='username'>
             Username:
@@ -35,8 +44,7 @@ const LoginForm = ({ handleLogin }) => {
             />
           <button type="submit">Login</button>
         </form>
-      </div>
-    </>
+    </section>
   );
 };
 
