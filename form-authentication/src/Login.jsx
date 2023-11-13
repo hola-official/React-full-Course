@@ -33,25 +33,9 @@ const LoginForm = ({ handleLogin }) => {
         <p ref={errRef} className={errMsg ? "errmsg" : 'offscren'} aria-live="assertive">
           {errMsg}
         </p>
-        <h1>Login</h1>
+        <h1>Sign In</h1>
         <form onSubmit={handleSubmit}>
-          <label htmlFor='username'>
-            Username:
-          </label>
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <label htmlFor='password'>
-            Password:
-          </label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button type="submit">Login</button>
+          
         </form>
       </section>
     </>
