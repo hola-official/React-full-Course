@@ -14,7 +14,10 @@ html {
 
 body {
   min-height: 100vh;
-  background-color: dodgerblue;
+  background: url('architecture-1048092_1280.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .App {
@@ -32,7 +35,8 @@ section {
   min-height: 400px;
   display: flex;
   flex-direction: column;
-  border-radius: 8px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
   justify-content: flex-start;
   padding: 1rem;
   background-color: rgba(0, 0, 0, 0.4);

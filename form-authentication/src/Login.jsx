@@ -24,13 +24,25 @@ function Login({handleLogin}) {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Basic validation, you'd typically want to do more here
-    if (username && password) {
+    if (!username && !password) {
       handleLogin(username);
+      setErrMsg('Invalid Entry')
+      return
     }
+    console.log(username, password);
+    setSuccess(true)
+    // clear the input filed
+    username('')
+    password('')
   };
 
   return (
     <>
+    {success ? ( <section>
+      <h1>Login Successful</h1>
+      <p><a href="/">Home</a></p>
+    </section>
+    ): (
         <section>
             <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">
                 {errMsg}
@@ -72,6 +84,7 @@ function Login({handleLogin}) {
               </span>
             </p>
         </section>
+    )}
     </>
   )
 }
