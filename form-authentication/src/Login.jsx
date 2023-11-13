@@ -31,7 +31,7 @@ const LoginForm = ({ handleLogin }) => {
     <>
       <section>
         <p ref={errRef} className={errMsg ? "errmsg" : 'offscren'} aria-live="assertive">
-
+          {errMsg}
         </p>
         <h1>Login</h1>
         <form onSubmit={handleSubmit}>
