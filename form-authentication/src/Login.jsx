@@ -29,31 +29,31 @@ const LoginForm = ({ handleLogin }) => {
 
   return (
     <>
-    <section>
-      <p  ref={errRef} className={errMsg ? "errmsg" : 'offscren'}>
+      <section>
+        <p ref={errRef} className={errMsg ? "errmsg" : 'offscren'} aria-live="assertive">
 
-      </p>
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor='username'>
-          Username:
-        </label>
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <label htmlFor='password'>
-          Password:
-        </label>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit">Login</button>
-      </form>
-    </section>
+        </p>
+        <h1>Login</h1>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor='username'>
+            Username:
+          </label>
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <label htmlFor='password'>
+            Password:
+          </label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button type="submit">Login</button>
+        </form>
+      </section>
     </>
   );
 };
