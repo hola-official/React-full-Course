@@ -30,6 +30,9 @@ const LoginForm = ({ handleLogin }) => {
   return (
     <>
     <section>
+      <p  ref={errRef} className={errMsg ? "errmsg" : 'offscren'}>
+
+      </p>
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor='username'>
