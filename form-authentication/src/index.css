@@ -14,6 +14,7 @@ html {
 
 body {
   min-height: 100vh;
+  /* background: dodgerblue; */
   background: url('seagull-8368246_1280.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -35,8 +36,8 @@ section {
   min-height: 400px;
   display: flex;
   flex-direction: column;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
   justify-content: flex-start;
   padding: 1rem;
   background-color: rgba(0, 0, 0, 0.4);
@@ -81,6 +82,10 @@ button {
 button {
   padding: 0.5rem;
   cursor: pointer;
+  /* color: #fff; */
+}
+button:hover:active {
+  color: #000;
 }
 
 .instructions {
