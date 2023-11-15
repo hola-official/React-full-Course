@@ -8,7 +8,7 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: 36px;
   font-family: "Chakra Petch", sans-serif;
 }
 
@@ -19,6 +19,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   background-color: #efefef;
+}
+.PostPage p {
+  font-family: "Times New Roman", Times, serif;
 }
 
 #root {
@@ -174,7 +177,7 @@ body {
   margin: 1rem 0;
 }
 
-.PostPage h2 {
+.PostPage h2, .NewPost h2, label {
   font-family: "Chakra Petch", sans-serif;
   /* font-family: "Times New Roman", Times, serif; */
 
@@ -229,9 +232,28 @@ body {
   border-radius: 0.25rem;
   padding: 0.5rem;
   font-size: 1rem;
-  background-color: red;
   color: #fff;
   cursor: pointer;
+}
+
+svg {
+  height: 48px;
+  min-width: 48px;
+  font-size: 2rem;
+  margin-right: 0.5rem;
+  color: #333;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.PostPage svg:focus,
+.PostPage svg:hover {
+  color: skyblue;
+  outline: none;
+}
+
+.PostPage svg:hover:active:last-child {
+  color: red;
 }
 
 .statusMsg {
@@ -281,7 +303,8 @@ h3 {
 
   .newPostForm textarea {
     height: 300px;
-  }
+    /* form-sizing: content; */ /* new css attribute*/
+  } 
 }
 
 @media only screen and (min-width: 992px) {

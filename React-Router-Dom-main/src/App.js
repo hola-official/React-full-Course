@@ -9,6 +9,8 @@ import About from "./About";
 import HomeLayout from "./HomeLayout";
 import api from "./api/posts";
 import EditPost from "./EditPost";
+import UseWindowSize from "./hooks/UseWindowSize";
+import UseAxiosFetch from "./hooks/UseAxiosFetch";
 
 const App = () => {
   const navigate = useNavigate();
@@ -31,6 +33,11 @@ const App = () => {
   const [postBody, setPostBody] = useState("");
   const [editTitle, setEditTitle] = useState("");
   const [editBody, setEditBody] = useState("");
+  const { width } = UseWindowSize();
+  const {data, fetchError, isLoading} = UseAxiosFetch('http://localhost:3500/posts')
+  useEffect(() => {
+    setPosts(data)
+  }, [data])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -59,23 +66,23 @@ const App = () => {
     setSearchResult(filterResult.reverse());
   }, [posts, search]);
 
-  useEffect(() => {
-    const fetchPost = async () => {
-      try {
-        const response = await api.get("/posts");
-        setPosts(response.data);
-      } catch (err) {
-        if (err.message) {
-          console.log(err.response.data);
-          console.log(err.response.status);
-          console.log(err.response.headers);
-        } else {
-          console.log(`Error: ${err.message}`);
-        }
-      }
-    };
-    fetchPost();
-  }, []);
+  // useEffect(() => {
+  //   const fetchPost = async () => {
+  //     try {
+  //       const response = await api.get("/posts");
+  //       setPosts(response.data);
+  //     } catch (err) {
+  //       if (err.message) {
+  //         console.log(err.response.data);
+  //         console.log(err.response.status);
+  //         console.log(err.response.headers);
+  //       } else {
+  //         console.log(`Error: ${err.message}`);
+  //       }
+  //     }
+  //   };
+  //   fetchPost();
+  // }, []);
 
   const handleEdit = async (id) => {
     const date = format(new Date(), "MMMM dd, yyyy pp");
@@ -97,9 +104,13 @@ const App = () => {
     <Routes>
       <Route
         path=""
-        element={<HomeLayout search={search} setSearch={setSearch} />}
+        element={<HomeLayout search={search} width={width} setSearch={setSearch} />}
       >
-        <Route index element={<Home posts={searchResult} />} />
+        <Route index element={<Home 
+        posts={searchResult}
+        fetchError={fetchError}
+        isLoading={isLoading}
+         />} />
         <Route path="/post">
           <Route
             index
