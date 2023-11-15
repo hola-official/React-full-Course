@@ -132,3 +132,8 @@ button:hover:active {
 .line {
   display: inline-block;
 }
+
+ul {
+  /* list-style: none; */
+  padding: 15px;
+}

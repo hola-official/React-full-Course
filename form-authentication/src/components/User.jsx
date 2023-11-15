@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react"
-import axios from "../api/axios"
+import useAxiosPrivate from "../hook/useAxiosPrivate"
+// import axios from "../api/axios"
 // import useRefreshToken from "../hook/useRefreshToken"
 
 const User = () => {
-    const [users, setUsers] = useState(null)
+    const [users, setUsers] = useState();
+    const axiosPrivate = useAxiosPrivate();
     // const refresh = useRefreshToken()
 
     useEffect(() => {
@@ -12,7 +14,7 @@ const User = () => {
 
         const getUsers = async () => {
             try {
-                const response = await axios.get('/users', {
+                const response = await axiosPrivate.get('/users', {
                     signal: controller.signal
                 })
                 console.log(response.data);
