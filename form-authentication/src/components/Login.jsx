@@ -4,7 +4,7 @@ import useAuth from "../hook/useAuth";
 import { useNavigate, Link, useLocation } from "react-router-dom";
 const LOGIN_URL = "/auth";
 
-function Login () {
+function Login() {
   const { setAuth, persist, setPersist } = useAuth();
 
   const navigate = useNavigate();
@@ -94,6 +94,9 @@ function Login () {
           />
         </label>
         <button disabled={!user || !pwd ? true : false}>Sign In</button>
+        <div className="persistCheck">
+          <input type="checkbox" id="persist" onChange={togglePersist} checked />
+        </div>
       </form>
       <p>
         Need an Account? <br />
