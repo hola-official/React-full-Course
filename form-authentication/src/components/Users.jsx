@@ -9,8 +9,8 @@ const User = () => {
     const axiosPrivate = useAxiosPrivate();
     // const refresh = useRefreshToken()
 
-    const navigate = useNavigate()
-    const location = useLocation()
+    // const navigate = useNavigate()
+    // const location = useLocation()
 
     useEffect(() => {
         let isMounted = true
@@ -25,7 +25,7 @@ const User = () => {
                 isMounted && setUsers(response.data)
             } catch (error) {
                 console.log(error);
-                navigate('/login', { state: { from: location }, replace: true })
+                // navigate('/login', { state: { from: location }, replace: true })
             }
         }
         getUsers()
