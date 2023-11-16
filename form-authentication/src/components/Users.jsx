@@ -12,7 +12,6 @@ const User = () => {
     const navigate = useNavigate()
     const location = useLocation()
 
-
     useEffect(() => {
         let isMounted = true
         const controller = new AbortController()
@@ -26,7 +25,7 @@ const User = () => {
                 isMounted && setUsers(response.data)
             } catch (error) {
                 console.log(error);
-                navigate('/login', {state: {from: location}, replace: true})
+                navigate('/login', { state: { from: location }, replace: true })
             }
         }
         getUsers()
