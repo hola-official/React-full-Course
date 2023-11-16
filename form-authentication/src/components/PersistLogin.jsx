@@ -15,7 +15,7 @@ const PersistLogin = () => {
               await refresh()  
             } catch (error) {
                 console.error(error);
-            }
+            } finally
         }
     }, [])
 }
