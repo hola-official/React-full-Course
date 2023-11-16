@@ -7,9 +7,11 @@ import { useNavigate, useLocation } from "react-router-dom";
 const User = () => {
     const [users, setUsers] = useState();
     const axiosPrivate = useAxiosPrivate();
+    // const refresh = useRefreshToken()
+    
     const navigate = useNavigate()
     const location = useLocation()
-    // const refresh = useRefreshToken()
+
 
     useEffect(() => {
         let isMounted = true
