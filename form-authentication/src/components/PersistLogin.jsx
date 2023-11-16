@@ -8,5 +8,16 @@ const PersistLogin = () => {
     const refresh = useRefreshToken();
 
     const { auth } = useAuth();
+
+    useEffect(() => {
+        const verifyRefreshToken = async () => {
+            try {
+              await refresh()  
+            } catch (error) {
+                console.error(error);
+            }
+        }
+    }, [])
 }
+
 export default PersistLogin
