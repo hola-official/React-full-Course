@@ -4,5 +4,7 @@ import useRefreshToken from "../hook/useRefreshToken";
 import useAuth from "../hook/useAuth";
 
 const PersistLogin = () => {
-    
+
 }
+
+export default PersistLogin
