@@ -4,32 +4,42 @@ import useRefreshToken from "../hook/useRefreshToken";
 import useAuth from "../hook/useAuth";
 
 const PersistLogin = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const refresh = useRefreshToken();
+    const [isLoading, setIsLoading] = useState(true);
+    const refresh = useRefreshToken();
 
-  const { auth } = useAuth();
+    const { auth } = useAuth();
 
-  useEffect(() => {
-    let isMounted = true;
+    useEffect(() => {
+        let isMounted = true;
 
-    const verifyRefreshToken = async () => {
-      try {
-        await refresh();
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    !auth?.accessToken ? verifyRefreshToken() : setIsLoading(false);
+        const verifyRefreshToken = async () => {
+            try {
+                await refresh();
+            } catch (error) {
+                console.error(error);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+        !auth?.accessToken ? verifyRefreshToken() : setIsLoading(false);
 
-    return () => (isMounted = false);
-  }, []);
+        return () => (isMounted = false);
+    }, []);
 
-  useEffect(() => {
-    console.log(`isLoading: ${isLoading}`);
-    console.log(`aT: ${JSON.stringify(auth?.accessToken)}`);
-  }, [isLoading]);
+    useEffect(() => {
+        console.log(`isLoading: ${isLoading}`);
+        console.log(`aT: ${JSON.stringify(auth?.accessToken)}`);
+    }, [isLoading]);
+
+    return (
+        <>
+            {isLoading ?
+                <p>Loading...</p>
+                :
+                <Outlet />
+            }
+        </>
+    )
 };
 
 export default PersistLogin;
