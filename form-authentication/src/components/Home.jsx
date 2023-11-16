@@ -6,7 +6,7 @@ const Home = () => {
     // const { setAuth } = useContext(AuthContext);
     const navigate = useNavigate();
 
-    const logout = async () => {
+    const signOut = async () => {
         // if used in more components, this should be in context 
         // axios to /logout endpoint 
         // setAuth({});
@@ -27,7 +27,7 @@ const Home = () => {
             <br />
             <Link to="/linkpage">Go to the link page</Link>
             <div className="flexGrow">
-                <button onClick={logout}>Sign Out</button>
+                <button onClick={signOut}>Sign Out</button>
             </div>
         </section>
     )
