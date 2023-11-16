@@ -8,7 +8,7 @@ const User = () => {
     const [users, setUsers] = useState();
     const axiosPrivate = useAxiosPrivate();
     // const refresh = useRefreshToken()
-    
+
     const navigate = useNavigate()
     const location = useLocation()
 
@@ -26,6 +26,7 @@ const User = () => {
                 isMounted && setUsers(response.data)
             } catch (error) {
                 console.log(error);
+                navigate('/login', {state: {from: location}, replace: true})
             }
         }
         getUsers()
