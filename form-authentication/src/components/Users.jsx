@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react"
 import useAxiosPrivate from "../hook/useAxiosPrivate"
+import { useNavigate, useLocation } from "react-router-dom";
 // import axios from "../api/axios"
 // import useRefreshToken from "../hook/useRefreshToken"
 
 const User = () => {
     const [users, setUsers] = useState();
     const axiosPrivate = useAxiosPrivate();
+    const navigate = useNavigate()
+    const location = useLocation()
     // const refresh = useRefreshToken()
 
     useEffect(() => {
