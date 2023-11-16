@@ -11,6 +11,7 @@ import Admin from './components/Admin'
 import Lounge from './components/Lounge'
 import Missing from './components/Missing'
 import RequireAuth from './components/RequireAuth';
+import PersistLogin from './components/PersistLogin';
 
 const ROLES = {
   'User': 4000,
@@ -37,6 +38,8 @@ const App = () => {
         <Route index path='linkpage' element={<LinkPage />} />
         <Route index path='unauthorized' element={<Unauthorized />} />
         {/* Private route */}
+        <Route element={<PersistLogin/>}>
+
         <Route element={<RequireAuth allowedRoles={[ROLES.User, ROLES.Editor, ROLES.Admin]} />}>
           <Route path='/' element={<Home username={user} handleLogout={handleLogout} />} />
         </Route>
@@ -48,6 +51,7 @@ const App = () => {
         </Route>
         <Route element={<RequireAuth allowedRoles={[ROLES.Admin, ROLES.Editor]} />}>
           <Route path='lounge' element={<Lounge />} />
+        </Route>
         </Route>
 
         {/* catch all error */}
