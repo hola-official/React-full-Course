@@ -9,8 +9,8 @@ const User = () => {
     const axiosPrivate = useAxiosPrivate();
     // const refresh = useRefreshToken()
 
-    // const navigate = useNavigate()
-    // const location = useLocation()
+    const navigate = useNavigate()
+    const location = useLocation()
 
     useEffect(() => {
         let isMounted = true
