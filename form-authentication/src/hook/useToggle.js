@@ -1,6 +1,6 @@
 import useLocalStorage from "./useLocalStorage"
 
-const useToggle = () => {
+const useToggle = (key, initValue) => {
   return
 }
 
