@@ -36,7 +36,7 @@ const useAxios = (configObj) => {
             // controller.abort()
         };
 
-    }, [])
+    }, [reload])
 
     return [response, loading, error]
 };
