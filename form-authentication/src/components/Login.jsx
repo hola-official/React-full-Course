@@ -16,7 +16,7 @@ function Login() {
   const userRef = useRef();
   const errRef = useRef();
 
-  const [user, resetUser, userAttribs] = useInput('') //useLocalStorage('user', '') //useState("");
+  const [user, reresetUser, userAttribs] = useInput('') //useLocalStorage('user', '') //useState("");
   const [pwd, setPwd] = useState("");
   const [errMsg, setErrMsg] = useState("");
 
@@ -45,7 +45,7 @@ function Login() {
 
       setAuth({ user, pwd, roles, accessToken });
       // clear the input filed
-      setUser("");
+      resetUser("");
       setPwd("");
       navigate(from, { replace: true })
     } catch (err) {
@@ -89,7 +89,7 @@ function Login() {
             ref={userRef}
             autoComplete="off"
             value={user}
-            onChange={(e) => setUser(e.target.value)}
+            onChange={(e) => resetUser(e.target.value)}
             required
           />
         </label>
