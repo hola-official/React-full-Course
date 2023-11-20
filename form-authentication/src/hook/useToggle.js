@@ -1,7 +1,7 @@
 import useLocalStorage from "./useLocalStorage"
 
 const useToggle = (key, initValue) => {
-  return
+    const [value, setValue] = useLocalStorage(key, useLocalStorage)
 }
 
 export default useToggle
