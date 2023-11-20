@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
-const useLocalStorage = () => {
-    
+const useLocalStorage = (key, initValue) => {
+
 }
 
 export default useLocalStorage
