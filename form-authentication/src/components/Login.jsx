@@ -109,7 +109,7 @@ function Login() {
         </label>
         <button disabled={!user || !pwd ? true : false}>Sign In</button>
         <div className="persistCheck">
-          <input type="checkbox" id="persist" onChange={togglePersist} checked={persist} />
+          <input type="checkbox" id="persist" onChange={toggleCheck} checked={check} />   {/*change the "togglePersist and persist to toggleCheck and check" */}
           <label htmlFor="persist">Trust this device</label>
         </div>
 
