@@ -14,7 +14,7 @@ const Jokes = () => {
     })
     return (
         <article>
-            <h2>Random Dad Jokes</h2>
+            <h2>Random Dad Jokes.</h2>
         </article>
     )
 }
