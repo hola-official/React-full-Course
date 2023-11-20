@@ -19,7 +19,7 @@ const useAxios = (configObj) => {
                 setResponse(res.data)
 
             } catch (err) {
-                console.error(err);
+                console.log(err);
                 setError(err.message)
             } finally {
                 setLoading(false)

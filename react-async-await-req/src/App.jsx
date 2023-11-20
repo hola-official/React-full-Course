@@ -1,9 +1,12 @@
+import Jokes from "./components/jokes"
+
 function App() {
 
   return (
-    <div className="App">
+    <main className="App">
       <h1>useAxios Hooks</h1>
-    </div>
+      <Jokes />
+    </main>
   )
 }
 
