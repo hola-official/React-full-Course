@@ -38,7 +38,7 @@ const useAxios = (configObj) => {
 
     }, [reload])
 
-    return [response, loading, error]
+    return [response, loading, error, refetch]
 };
 
 
