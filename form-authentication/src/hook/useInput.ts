@@ -5,6 +5,7 @@ const useInput = (initValue) => {
     const reset = () => setValue(initValue)
 
     const attributeObj = {
-        value: value,
+        value,
+        onChange: (e) => setValue(e.target.value)
     }
 }
