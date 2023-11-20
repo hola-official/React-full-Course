@@ -8,4 +8,6 @@ const useInput = (initValue) => {
         value,
         onChange: (e) => setValue(e.target.value)
     }
+
+    return [value, reset, attributeObj]
 }
