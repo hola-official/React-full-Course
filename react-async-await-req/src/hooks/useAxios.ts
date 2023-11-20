@@ -25,5 +25,7 @@ const useAxios = (configObj) => {
                 setLoading(false)
             }
         }
+        fetchData();
+        
     }, [])
 };
