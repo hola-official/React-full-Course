@@ -11,6 +11,8 @@ const getLocalValue = (key, initValue) => {
 
     // return result of a function
     if (initValue instanceof Function) return initValue()
+
+    return initValue
 }
 
 const useLocalStorage = (key, initValue) => {
