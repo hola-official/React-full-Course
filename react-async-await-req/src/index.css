@@ -51,11 +51,20 @@ li {
 
 button {
   margin: 0.5rem 0.5rem 0 0;
+  cursor: pointer;
+  border: none;
   width: 150px;
   font-family: "Nunito", sans-serif;
   font-size: 22px;
   padding: 0.25rem;
+  background-color: #fff;
   border-radius: 0.5rem;
+  transition: 4s ease-in;
+}
+
+button:hover {
+  background-color: skyblue;
+  color: #fff;
 }
 
 .row {
