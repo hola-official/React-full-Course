@@ -11,12 +11,12 @@ function Login() {
 
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from?.pathname || '/';
+  const from = location.state?.from?.pathname || "/";
 
   const userRef = useRef();
   const errRef = useRef();
 
-  const [user, setUser] = useState("");
+  const [user, setUser] = useLocalStorage("user", ""); //useState("");
   const [pwd, setPwd] = useState("");
   const [errMsg, setErrMsg] = useState("");
 
@@ -47,7 +47,7 @@ function Login() {
       // clear the input filed
       setUser("");
       setPwd("");
-      navigate(from, { replace: true })
+      navigate(from, { replace: true });
     } catch (err) {
       if (!err.response) {
         setErrMsg("No server Response");
@@ -63,12 +63,12 @@ function Login() {
   };
 
   const togglePersist = () => {
-    setPersist(prev => !prev)
-  }
+    setPersist((prev) => !prev);
+  };
 
   useEffect(() => {
-    localStorage.setItem('persist', persist)
-  }, [persist])
+    localStorage.setItem("persist", persist);
+  }, [persist]);
 
   return (
     <section>
@@ -105,15 +105,19 @@ function Login() {
         </label>
         <button disabled={!user || !pwd ? true : false}>Sign In</button>
         <div className="persistCheck">
-          <input type="checkbox" id="persist" onChange={togglePersist} checked={persist} />
+          <input
+            type="checkbox"
+            id="persist"
+            onChange={togglePersist}
+            checked={persist}
+          />
           <label htmlFor="persist">Trust this device</label>
         </div>
-
       </form>
       <p>
         Need an Account? <br />
         <span className="line">
-          <Link to='/register'>Sign Up</Link>
+          <Link to="/register">Sign Up</Link>
         </span>
       </p>
     </section>
