@@ -4,7 +4,7 @@ const useAxios = (configObj) => {
     const { axiosInstance, method, url, requestConfig = {} } = configObj;
 
     const [response, setResponse] = useState([]);
-    const [Error, setError] = useState("");
+    const [error, setError] = useState("");
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -30,4 +30,9 @@ const useAxios = (configObj) => {
         return () => controller.abort();
 
     }, [])
+
+    return [response, loading, error]
 };
+
+
+export default useAxios
