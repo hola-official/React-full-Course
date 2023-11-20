@@ -16,7 +16,7 @@ function Login() {
   const userRef = useRef();
   const errRef = useRef();
 
-  const [user, reresetUser, userAttribs] = useInput('') //useLocalStorage('user', '') //useState("");
+  const [user, resetUser, userAttribs] = useInput('') //useLocalStorage('user', '') //useState("");
   const [pwd, setPwd] = useState("");
   const [errMsg, setErrMsg] = useState("");
 
@@ -88,8 +88,8 @@ function Login() {
             id="username"
             ref={userRef}
             autoComplete="off"
-            value={user}
-            onChange={(e) => resetUser(e.target.value)}
+            // value={user}
+            // onChange={(e) => resetUser(e.target.value)}
             required
           />
         </label>
