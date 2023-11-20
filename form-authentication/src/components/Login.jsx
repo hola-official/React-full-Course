@@ -9,7 +9,7 @@ import useToggle from "../hook/useToggle";
 const LOGIN_URL = "/auth";
 
 function Login() {
-  const { setAuth, persist, setPersist } = useAuth();
+  const { setAuth } = useAuth();  // persist, setPersist
 
   const navigate = useNavigate();
   const location = useLocation();
