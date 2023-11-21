@@ -52,7 +52,7 @@ const Posts = () => {
                 }
             </ul>}
 
-            {!loading && !error && !posts && <p>No Joke display! 🙂</p>}
+            {!loading && !error && !posts && <p>No Post display! 🙂</p>}
         </article>
     );
 };
