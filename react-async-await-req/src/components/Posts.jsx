@@ -42,6 +42,8 @@ const Posts = () => {
         <article>
             <h2>Posts</h2>
 
+            <button onClick={handleSubmit()} ></button>
+
             {loading && <p>loading...</p>}
 
             {!loading && error && <p className="errMsg">{error}</p>}
@@ -53,6 +55,7 @@ const Posts = () => {
             </ul>}
 
             {!loading && !error && !posts && <p>No Post display! 🙂</p>}
+
         </article>
     );
 };
