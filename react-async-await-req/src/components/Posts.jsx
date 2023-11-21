@@ -46,7 +46,11 @@ const Posts = () => {
 
             {!loading && error && <p className="errMsg">{error}</p>}
 
-            {!loading && !error && posts && <p>{posts?.posts}</p>}
+            {!loading && !error && posts?.length && <ul>
+                {
+                    posts.map((post, i) => <li key={i}>{post.id}. {post.body}</li>)
+                }
+            </ul>}
 
             {!loading && !error && !posts && <p>No Joke display! 🙂</p>}
         </article>
