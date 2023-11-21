@@ -34,9 +34,8 @@ const useAxiosFunction = () => {
     useEffect(() => {
        console.log(controller);
        
-        return () => {
-          
-        };
+       // clean up
+        return () => controller.abort();
 
     }, [controller])
 
