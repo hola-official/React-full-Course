@@ -29,19 +29,14 @@ const useAxiosFunction = () => {
     useEffect(() => {
         // const controller = new AbortController();
         let isMounted = true;
-        const fetchData = async () => {
-           
-        }
-        fetchData();
-
         return () => {
             isMounted = false
             // controller.abort()
         };
 
-    }, [reload])
+    }, [])
 
-    return [response, loading, error, refetch]
+    return [response, loading, error]
 };
 
 
