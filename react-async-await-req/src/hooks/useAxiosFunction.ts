@@ -7,6 +7,10 @@ const useAxiosFunction = () => {
     const [loading, setLoading] = useState(false);
     const [controller, setController] = useState();
 
+    const axiosFetch = async (configObj) => {
+        const { axiosInstance, method, url, requestConfig = {} } = configObj;
+    }
+
     useEffect(() => {
         // const controller = new AbortController();
         let isMounted = true;
