@@ -32,14 +32,13 @@ const useAxiosFunction = () => {
     }
 
     useEffect(() => {
-        // const controller = new AbortController();
-        let isMounted = true;
+       console.log(controller);
+       
         return () => {
-            isMounted = false
-            // controller.abort()
+          
         };
 
-    }, [])
+    }, [controller])
 
     return [response, loading, error]
 };
