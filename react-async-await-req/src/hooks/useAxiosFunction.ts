@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
-const useAxios = (configObj) => {
-    const { axiosInstance, method, url, requestConfig = {} } = configObj;
+const useAxiosFunction = () => {
+   
 
     const [response, setResponse] = useState([]);
     const [error, setError] = useState("");
@@ -42,4 +42,4 @@ const useAxios = (configObj) => {
 };
 
 
-export default useAxios
+export default useAxiosFunction
