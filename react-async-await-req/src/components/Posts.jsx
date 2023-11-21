@@ -41,8 +41,9 @@ const Posts = () => {
     return (
         <article>
             <h2>Posts</h2>
-
-            <button onClick={handleSubmit()} ></button>
+            <div className="row">
+            <button onClick={() => handleSubmit()} ></button>  
+            </div>
 
             {loading && <p>loading...</p>}
 
