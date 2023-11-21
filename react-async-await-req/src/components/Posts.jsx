@@ -42,18 +42,22 @@ const Posts = () => {
         <article>
             <h2>Posts</h2>
             <div className="row">
-            <button onClick={() => handleSubmit()} ></button>  
+            <button onClick={handleSubmit()} >Submit</button>  
             </div>
 
             {loading && <p>loading...</p>}
 
             {!loading && error && <p className="errMsg">{error}</p>}
 
-            {!loading && !error && posts?.length && <ul>
+            {!loading && !error && posts?.length && (<ul>
                 {
                     posts.map((post, i) => <li key={i}>{post.id}. {post.body}</li>)
                 }
-            </ul>}
+            </ul>)}
+
+            {!loading && !error && posts?.length && posts ?.data && <p>
+                `${}`
+            </p> }
 
             {!loading && !error && !posts && <p>No Post display! 🙂</p>}
 

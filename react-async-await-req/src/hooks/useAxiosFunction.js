@@ -35,7 +35,7 @@ const useAxiosFunction = () => {
        console.log(controller);
        
        // clean up
-        return () => controller.abort();
+        return () => controller && controller.abort();
 
     }, [controller])
 

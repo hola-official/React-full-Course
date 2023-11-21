@@ -70,3 +70,8 @@ button:hover {
 .row {
   display: flex;
 }
+
+ul {
+  width: 550px;
+  padding: 20px;
+}
