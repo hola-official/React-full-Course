@@ -3,7 +3,7 @@ import axios from "../api/jsonPH";
 import useAxiosFunction from "../hooks/useAxiosFunction";
 
 const Posts = () => {
-    const [response, loading, error, axiosFetch] = useAxiosFunction();
+    const [posts, loading, error, axiosFetch] = useAxiosFunction();
 
     // const getData = () => {
     //     axiosFetch({
@@ -40,15 +40,15 @@ const Posts = () => {
     };
     return (
         <article>
-            <h2>Random Dad Jokes.</h2>
+            <h2>Posts</h2>
 
             {loading && <p>loading...</p>}
 
             {!loading && error && <p className="errMsg">{error}</p>}
 
-            {!loading && !error && joke && <p>{joke?.joke}</p>}
+            {!loading && !error && posts && <p>{posts?.posts}</p>}
 
-            {!loading && !error && !joke && <p>No Joke display! 🙂</p>}
+            {!loading && !error && !posts && <p>No Joke display! 🙂</p>}
         </article>
     );
 };
