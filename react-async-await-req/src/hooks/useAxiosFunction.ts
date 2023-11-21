@@ -5,9 +5,7 @@ const useAxiosFunction = () => {
     const [response, setResponse] = useState([]);
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
-    const [reload, setReload] = useState(0);
-
-    const refetch = () => setReload(prev => prev + 1);
+    const [controller, setController] = useState();
 
     useEffect(() => {
         // const controller = new AbortController();
