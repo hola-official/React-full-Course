@@ -11,18 +11,16 @@ const useAxiosFunction = () => {
         const { axiosInstance, method, url, requestConfig = {} } = configObj;
 
         try {
-            const res = await axiosInstance[method.toLowerCase()](url, {
-                ...requestConfig,
-                // signal: controller.signal
-            })
+            const ctrl = new AbortController()
+            
             console.log(res);
-            isMounted && setResponse(res.data)
+            setResponse(res.data)
 
         } catch (err) {
             console.log(err);
             setError(err.message)
         } finally {
-            setLoading(false)
+            setLoading(true)
         }
     }
 
