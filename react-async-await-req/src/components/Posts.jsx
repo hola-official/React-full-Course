@@ -56,7 +56,7 @@ const Posts = () => {
             </ul>)}
 
             {!loading && !error && posts?.length && posts ?.data && <p>
-                `${}`
+                {`userId:${posts.data?.userId}`}
             </p> }
 
             {!loading && !error && !posts && <p>No Post display! 🙂</p>}
