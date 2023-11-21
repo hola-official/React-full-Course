@@ -18,9 +18,8 @@ const useAxiosFunction = () => {
             const res = await axiosInstance[method.toLowerCase()](url, {
                 ...requestConfig,
                 signal: ctrl.signal
-
             })
-            
+
             console.log(res);
             setResponse(res.data)
 
@@ -28,7 +27,7 @@ const useAxiosFunction = () => {
             console.log(err);
             setError(err.message)
         } finally {
-            setLoading(true)
+            setLoading(false)
         }
     }
 
