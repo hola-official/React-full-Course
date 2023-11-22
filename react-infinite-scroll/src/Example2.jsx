@@ -46,7 +46,7 @@ const Example2 = () => {
         [isFetchingNextPage, fetchNextPage, hasNextPage]
     );
 
-    if (isError) return <p className="center">Error: {error.message}</p>;
+    if (status === 'error') return <p className="center">Error: {error.message}</p>;
 
     const content = results.map((post, i) => {
         if (results.length === i + 1) {
