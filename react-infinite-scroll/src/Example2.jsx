@@ -17,7 +17,7 @@ const Example2 = () => {
         (post) => {
             if (isFetchingNextPage) return;
 
-            if (intObserver.current) return intObserver.current.disconnect();
+            if (intObserver.current) intObserver.current.disconnect();
 
             const confirmedLoad = () => {
                 confirmAlert({
