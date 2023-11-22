@@ -17,16 +17,17 @@ const usePosts = (pageNum = 1) => {
     const { signal } = controller
 
     getPostPage(pageNum, { signal })
-    .then(data => {
-      setResults(prev => [...prev, ...data]);
-      setHasNextPage(Boolean(data.length));
-      setLoading(false)
-    })
-    .catch(e => {
-      setLoading(false)
-      if(signal.aborted) return 
-      setIsError(true)
-    })
+      .then(data => {
+        setResults(prev => [...prev, ...data]);
+        setHasNextPage(Boolean(data.length));
+        setLoading(false)
+      })
+      .catch(e => {
+        setLoading(false)
+        if (signal.aborted) return
+        setIsError(true)
+        setError({ message: e.message })
+      })
   }, []);
 
   return { loading, isError, error, results, hasNextPage };
