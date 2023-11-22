@@ -23,7 +23,7 @@ const usePosts = (pageNum = 1) => {
       setLoading(false)
     })
     .catch(e => {
-      setLoading()
+      setLoading(false)
     })
   }, []);
 
