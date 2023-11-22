@@ -29,7 +29,7 @@ const usePosts = (pageNum = 1) => {
         setError({ message: e.message });
       });
 
-      return () => controller.abort()
+    return () => controller.abort();
   }, [pageNum]);
 
   return { loading, isError, error, results, hasNextPage };
