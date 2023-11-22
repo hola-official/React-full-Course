@@ -14,20 +14,20 @@ const usePosts = (pageNum = 1) => {
     setError({});
 
     const controller = new AbortController();
-    const { signal } = controller
+    const { signal } = controller;
 
     getPostPage(pageNum, { signal })
-      .then(data => {
-        setResults(prev => [...prev, ...data]);
+      .then((data) => {
+        setResults((prev) => [...prev, ...data]);
         setHasNextPage(Boolean(data.length));
-        setLoading(false)
+        setLoading(false);
       })
-      .catch(e => {
-        setLoading(false)
-        if (signal.aborted) return
-        setIsError(true)
-        setError({ message: e.message })
-      })
+      .catch((e) => {
+        setLoading(false);
+        if (signal.aborted) return;
+        setIsError(true);
+        setError({ message: e.message });
+      });
   }, []);
 
   return { loading, isError, error, results, hasNextPage };
