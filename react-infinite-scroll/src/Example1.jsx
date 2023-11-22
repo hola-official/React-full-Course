@@ -7,7 +7,7 @@ const Example1 = () => {
   const [pageNum, setPageNum] = useState(1)
   const { loading, isError, error, results, hasNextPage } = usePosts(pageNum)
 
-  if(isError) return <p className="center">Error: {error.message}</p>
+  if (isError) return <p className="center">Error: {error.message}</p>
   return (
     <>
       <h1 id="top">
