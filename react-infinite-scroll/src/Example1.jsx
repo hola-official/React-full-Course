@@ -25,9 +25,7 @@ const Example1 = () => {
     if(post) intObserver.current.observe(post)
   }, [loading, hasNextPage])
   const content = results.map((post, i) => {
-    if (results.length === i + 1) {
-
-    }
+    if (results.length === i + 1) 
     return <Post key={post.id} post={post} />
   })
   return (
