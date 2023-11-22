@@ -24,6 +24,8 @@ const usePosts = (pageNum = 1) => {
     })
     .catch(e => {
       setLoading(false)
+      if(signal.aborted) return 
+      setIsError(true)
     })
   }, []);
 
