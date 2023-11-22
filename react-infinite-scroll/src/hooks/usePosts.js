@@ -22,6 +22,9 @@ const usePosts = (pageNum = 1) => {
       setHasNextPage(Boolean(data.length));
       setLoading(false)
     })
+    .catch(e => {
+      setLoading()
+    })
   }, []);
 
   return { loading, isError, error, results, hasNextPage };
