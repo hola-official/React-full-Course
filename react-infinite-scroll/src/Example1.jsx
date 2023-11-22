@@ -22,11 +22,11 @@ const Example1 = () => {
         buttons: [
           {
             label: 'Yes',
-            onClick: () =>{
+            onClick: () => {
               setPageNum((prev) => prev + 1);
             }
           },
-          {label: 'No'}
+          { label: 'No' }
         ]
       })
     }
