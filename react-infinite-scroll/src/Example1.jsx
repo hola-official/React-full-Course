@@ -10,7 +10,13 @@ const Example1 = () => {
 
   if (isError) return <p className="center">Error: {error.message}</p>
 
-  const lastPostRef = useRef();
+  const intObserver = useRef();
+
+  const lastPostRef = useCallback((post) => {
+    if(loading) return;
+    
+    if(intObserver.current) return intObserver.current.disconnect()
+  })
   const content = results.map((post, i) => {
     if (results.length === i + 1) {
 
