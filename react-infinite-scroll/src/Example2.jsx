@@ -48,7 +48,7 @@ const Example2 = () => {
 
     if (status === 'error') return <p className="center">Error: {error.message}</p>;
 
-    const content = data.pages.map(pg => {
+    const content = data?.pages.map(pg => {
         return pg.map((post, i) => {
             if (pg.length === i + 1) {
                 return <Post ref={lastPostRef} key={post.id} post={post} />;
