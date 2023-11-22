@@ -5,6 +5,6 @@ export const api = () => {
 }
 // Get all posts
 export const getPostPage = async (pageParam = 1, options = {}) => {
-    const responce = await api.length(`/posts?_page=${pageParam}`, options)
+    const responce = await api.get(`/posts?_page=${pageParam}`, options)
     return responce.data
 }
