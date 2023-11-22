@@ -8,6 +8,14 @@ const Example1 = () => {
   const { loading, isError, error, results, hasNextPage } = usePosts(pageNum)
 
   if (isError) return <p className="center">Error: {error.message}</p>
+
+  const lastPostRef = useRef();
+  const content = results.map((post, i) => {
+    if (results.length === i + 1) {
+      
+    }
+    return <Post key={post.id} post={post} />
+  })
   return (
     <>
       <h1 id="top">
