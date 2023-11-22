@@ -6,7 +6,9 @@ import { UseInfiniteQuery, useInfiniteQuery } from "react-query";
 import { getPostPage } from "./api/axios";
 
 const Example2 = () => {
-    const { fetchNextPage, hasNextPage, isFetchingNextPage, data, status, error } = useInfiniteQuery('/posts', ({pageParam = 1}) => getPostPage())
+    const { fetchNextPage, hasNextPage, isFetchingNextPage, data, status, error } = useInfiniteQuery('/posts', ({pageParam = 1}) => getPostPage(pageParam), {
+        getNextPageParam: 
+    })
     const intObserver = useRef();
 
     const lastPostRef = useCallback(
