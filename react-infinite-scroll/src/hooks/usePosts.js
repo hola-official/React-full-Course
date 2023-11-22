@@ -16,7 +16,7 @@ const usePosts = (pageNum = 1) => {
     const controller = new AbortController();
     const { signal } = controller
 
-    getPostPage()
+    getPostPage(pageNum, { signal })
   }, []);
 
   return { loading, isError, error, results, hasNextPage };
