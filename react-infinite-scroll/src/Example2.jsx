@@ -2,11 +2,11 @@ import { useRef, useCallback } from "react";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 import Post from "./Post";
-import { UseInfiniteQuery, useInfiniteQuery } from "react-query";
+import { useInfiniteQuery } from "react-query";
 import { getPostPage } from "./api/axios";
 
 const Example2 = () => {
-    const { fetchNextPage, hasNextPage, isFetchingNextPage, data, status, error } = useInfiniteQuery('/posts', ({pageParam = 1}) => getPostPage(pageParam), {
+    const { fetchNextPage, hasNextPage, isFetchingNextPage, data, status, error } = useInfiniteQuery('/posts', ({ pageParam = 1 }) => getPostPage(pageParam), {
         getNextPageParam: (lastPage, allPages) => {
             return lastPage.length ? allPages.length + 1 : undefined
         }
