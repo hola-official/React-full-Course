@@ -16,7 +16,14 @@ const Example1 = () => {
     if(loading) return;
     
     if(intObserver.current) return intObserver.current.disconnect()
-  })
+
+    intObserver.current = new IntersectionObserver((post) => {
+      if(post[0].isIntersecting && hasNextPage) 
+      console.log('we are new the last post');
+    setPageNum(prev => prev + 1)
+    })
+    if(post) intObserver.current.observe(post)
+  }, [loading, hasNextPage])
   const content = results.map((post, i) => {
     if (results.length === i + 1) {
 
