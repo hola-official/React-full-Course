@@ -15,7 +15,7 @@ const Example2 = () => {
 
     const lastPostRef = useCallback(
         (post) => {
-            if (loading) return;
+            if (isFetchingNextPage) return;
 
             if (intObserver.current) return intObserver.current.disconnect();
 
@@ -27,7 +27,7 @@ const Example2 = () => {
                         {
                             label: "Yes",
                             onClick: () => {
-                                setPageNum((prev) => prev + 1);
+                                fetchNextPage()
                             },
                         },
                         { label: "No" },
