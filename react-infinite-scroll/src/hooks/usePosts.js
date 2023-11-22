@@ -12,6 +12,8 @@ const usePosts = (pageNum = 1) => {
     setLoading(true);
     setIsError(false);
     setError({});
+
+    
   }, []);
 
   return { loading, isError, error, results, hasNextPage };
