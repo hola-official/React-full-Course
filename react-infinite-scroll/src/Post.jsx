@@ -1,4 +1,5 @@
-const Post = React.forwardRef(() => {
+import React from "react";
+const Post = React.forwardRef(({ post }, ref) => {
     const postBody = (
         <>
             <h1>{post.title}</h1>
