@@ -4,6 +4,7 @@ import { getPostPage } from '../api/axios'
 const usePosts = () => {
   const [results, setResults] = useState([])
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState({})
   return (
     <div>usePosts</div>
   )
