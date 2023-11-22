@@ -4,21 +4,22 @@ import { confirmAlert } from "react-confirm-alert"
 import 'react-confirm-alert/src/react-confirm-alert.css'
 
 const Example1 = () => {
-  
+  const [pageNum, setPageNum] = useState(1)
+  const { loading, isError, error, results, hasNextPage } = usePosts(pageNum)
   return (
     <>
-    <h1 id="top">
+      <h1 id="top">
         &infin; Infinite Query &amp; Scroll
         <br />
         &infin; Ex. 1 - React Only
-    </h1>
-    <p className="center">
+      </h1>
+      <p className="center">
         Loading more posts...
-    </p>
+      </p>
 
-    <p className="center">
+      <p className="center">
         <a href="#top">Back to Top</a>
-    </p>
+      </p>
     </>
   )
 }
