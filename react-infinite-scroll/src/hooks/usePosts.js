@@ -17,6 +17,11 @@ const usePosts = (pageNum = 1) => {
     const { signal } = controller
 
     getPostPage(pageNum, { signal })
+    .then(data => {
+      setResults(prev => [...prev, ...data]);
+      setHasNextPage(Boolean(data.length));
+      setLoading(false)
+    })
   }, []);
 
   return { loading, isError, error, results, hasNextPage };
