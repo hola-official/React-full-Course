@@ -4,9 +4,9 @@ import Example2 from './Example2'
 
 function App() {
   return (
-    <main className='App'>
+    <section className='App'>
       <Example2 />
-    </main>
+    </section>
   )
 }
 
